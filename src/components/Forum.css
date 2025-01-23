@@ -1,0 +1,37 @@
+/* src/components/Forum.css */
+.forum-section, .forum-topic-section, .post-detail-section {
+  padding: 20px;
+}
+
+.forum-topic, .post-detail {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.forum-topic .topic-title, .post-detail h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.add-post, .add-reply {
+  margin-bottom: 20px;
+}
+
+.add-post input, .add-post textarea, .add-reply textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.add-post button, .add-reply button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-post button:hover, .add-reply button:hover {
+  background-color: #0056b3;
+}

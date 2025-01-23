@@ -1,0 +1,16 @@
+.wow-header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    color: #ffd700;
+  }
+  
+  .wow-nav a {
+    margin: 0 10px;
+    color: #ffd700;
+    text-decoration: none;
+  }
+  
+  .wow-nav a:hover {
+    text-decoration: underline;
+  }

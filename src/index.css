@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffd700;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.forum-content {
+  flex: 1;
+}
+
+.logout-button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #e03e00;
+}
