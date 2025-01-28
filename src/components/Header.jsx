@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -6,9 +7,9 @@ function Header() {
     <header className="wow-header">
       <h1 className="forum-title">World of Warcraft Forum</h1>
       <nav className="wow-nav">
-        <a href="#">Home</a>
-        <a href="#">Topics</a>
-        <a href="#">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/forum">Forum</Link>
+        <Link to="/character">Character</Link>
       </nav>
     </header>
   );

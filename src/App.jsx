@@ -6,7 +6,7 @@ import Forum from './components/Forum';
 import ForumTopic from './components/ForumTopic';
 import PostDetail from './components/PostDetail';
 import Character from './components/Character';
-//import GuildEvents from './components/GuildEvents';
+import AuctionHouse from './components/AuctionHouse';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -71,6 +71,7 @@ function App() {
                   <Route path="/forum/:id" element={<ForumTopic />} />
                   <Route path="/forum/:id/post/:postId" element={<PostDetail />} />
                   <Route path="/character" element={<Character token={userData.token} />} />
+                  <Route path="/auctionhouse" element={<AuctionHouse token={userData.token} />} />
                 </Routes>
               </div>
             )}

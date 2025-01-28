@@ -106,7 +106,9 @@ const Character = ({ token }) => {
           <div className="equipment">
             {characterEquipment.map(item => (
               <div key={item.item.id} className="equipment-item">
-                <img src={item.media.assets[0].value} alt={item.name} />
+                <a href={`https://www.wowhead.com/item=${item.item.id}`} target="_blank" rel="noopener noreferrer">
+                  <img src={item.media.assets[0].value} alt={item.name} />
+                </a>
                 <p>{item.name}</p>
               </div>
             ))}

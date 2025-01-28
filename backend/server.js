@@ -187,14 +187,73 @@ app.get('/character/equipment', async (req, res) => {
   }
 });
 
-app.get('/item/media', async (req, res) => {
-  const { itemId } = req.query;
+// Dohvaćanje podataka iz aukcijske kuće s paginacijom
+app.get('/auctionhouse', async (req, res) => {
   const token = req.query.token;
+  const page = parseInt(req.query.page) || 1;
+  const itemsPerPage = parseInt(req.query.itemsPerPage) || 10;
+
+  try {
+    const response = await fetchWithRetry('https://eu.api.blizzard.com/data/wow/connected-realm/1403/auctions', {
+      params: {
+        namespace: 'dynamic-eu',
+        locale: 'en_GB',
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const auctionData = response.data.auctions;
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedData = auctionData.slice(startIndex, endIndex);
+
+    res.json({ auctions: paginatedData, total: auctionData.length });
+  } catch (error) {
+    console.error('Error fetching auction house data:', error.message);
+    console.error('Error details:', error.response?.data);
+    console.error('Error status:', error.response?.status);
+    console.error('Error headers:', error.response?.headers);
+    res.status(500).send(`Error fetching auction house data: ${error.message}`);
+  }
+});
+
+app.get('/item', async (req, res) => {
+  const{itemId, token} = req.query;
+
+  try {
+    const response = await fetchWithRetry(`https://eu.api.blizzard.com/data/wow/item/${itemId}`, {
+      params: {
+        namespace: 'static-eu',
+        locale: 'en_GB',
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching item data:', error.message);
+    console.error('Error details:', error.response?.data);
+    console.error('Error status:', error.response?.status);
+    console.error('Error headers:', error.response?.headers);
+    res.status(500).send(`Error fetching item data: ${error.message}`);
+  }
+});
+
+
+
+// Dohvaćanje medija predmeta
+app.get('/item/media', async (req, res) => {
+  const { itemId, token } = req.query;
 
   try {
     const response = await fetchWithRetry(`https://eu.api.blizzard.com/data/wow/media/item/${itemId}`, {
       params: {
-        namespace: 'static-11.0.7_57788-eu',
+        namespace: 'static-eu',
+        locale: 'en_GB',
       },
       headers: {
         Authorization: `Bearer ${token}`,

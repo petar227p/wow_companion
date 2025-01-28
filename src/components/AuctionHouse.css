@@ -1,0 +1,148 @@
+.auction-house {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auction-house h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auction-house ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.auction-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.auction-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 2px solid; /* Default border color */
+  border-radius: 4px;
+}
+
+.currency-icon {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 2px;
+  vertical-align: text-bottom;
+  border: none !important;
+}
+
+.auction-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.auction-details p {
+  margin: 2px 0;
+  color: #555;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #f1f1f1;
+}
+
+.item-name.poor {
+  color: #9d9d9d;
+}
+
+.item-name.common {
+  color: #000000;
+}
+
+.item-name.uncommon {
+  color: #1eff00;
+}
+
+.item-name.rare {
+  color: #0070dd;
+}
+
+.item-name.epic {
+  color: #a335ee;
+}
+
+.item-name.legendary {
+  color: #ff8000;
+}
+
+.item-name.artifact {
+  color: #e6cc80;
+}
+
+.item-name.heirloom {
+  color: #00ccff;
+}
+
+.item-image.poor {
+  border-color: #9d9d9d;
+}
+
+.item-image.common {
+  border-color: #000000;
+}
+
+.item-image.uncommon {
+  border-color: #1eff00;
+}
+
+.item-image.rare {
+  border-color: #0070dd;
+}
+
+.item-image.epic {
+  border-color: #a335ee;
+}
+
+.item-image.legendary {
+  border-color: #ff8000;
+}
+
+.item-image.artifact {
+  border-color: #e6cc80;
+}
+
+.item-image.heirloom {
+  border-color: #00ccff;
+}
+
